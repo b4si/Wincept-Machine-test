@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "20466007630",
+    "project_id": "machine-test-wincept",
+    "storage_bucket": "machine-test-wincept.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20466007630:android:9b73102e2d2625cb078d1f",
+        "android_client_info": {
+          "package_name": "com.example.machine_test_wincept"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRnAG5VzSJVu5gYaE-rP86L6HT4yIKPyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
