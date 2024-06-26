@@ -5,6 +5,7 @@ import 'package:machine_test_wincept/controller/product_controller.dart';
 import 'package:machine_test_wincept/firebase_options.dart';
 import 'package:machine_test_wincept/utils/colors.dart';
 import 'package:machine_test_wincept/view/bottom_nav_bar.dart';
+import 'package:machine_test_wincept/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
           useMaterial3: true,
         ),
-        home: const BottomNavBarWidget(),
+        home: const SplashScreen(),
       ),
     );
   }

@@ -50,21 +50,73 @@ class _OrdersScreenState extends State<OrdersScreen> {
               return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-                  return ListView(
-                    children: [
-                      Row(
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: const Offset(0.5, 0.5),
+                                blurRadius: 1,
+                                spreadRadius: 0,
+                                color: Colors.grey.shade400)
+                          ]),
+                      child: Row(
                         children: [
-                          Image.network(
-                            data[index]['image'],
+                          SizedBox(
+                            height: size.height * 0.15,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                data[index]['image'],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                data[index]['name'],
+                                style: const TextStyle(
+                                    color: primaryColor,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                'Quantity - ${data[index]['quantity']}',
+                                style: const TextStyle(
+                                    color: primaryColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                'Net Total - ₹ ${calculateSubtotal(
+                                  data[index]['quantity'],
+                                  data[index]['price'],
+                                )}',
+                                style: const TextStyle(
+                                    color: primaryColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500),
+                              )
+                            ],
                           )
                         ],
-                      )
-                    ],
+                      ),
+                    ),
                   );
                 },
               );
             }
           }),
     );
+  }
+
+  String calculateSubtotal(String qty, String price) {
+    int result = int.parse(price) * int.parse(qty);
+    return result.toString();
   }
 }

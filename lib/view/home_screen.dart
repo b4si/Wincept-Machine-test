@@ -103,6 +103,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           return const ShimmerContainer();
                         },
                       );
+                    } else if (snapshot.connectionState ==
+                        ConnectionState.none) {
+                      return const Center(
+                        child: Text("No internet connection"),
+                      );
                     } else {
                       var data = snapshot.data!.docs;
                       return GridView.builder(

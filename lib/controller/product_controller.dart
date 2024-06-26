@@ -34,6 +34,7 @@ class ProductController with ChangeNotifier {
     try {
       await _firestore.collection('orders').add({
         'name': name,
+        'image': image,
         'description': description,
         'price': price,
         'quantity': quantity.toString(),
