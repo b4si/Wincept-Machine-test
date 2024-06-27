@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:machine_test_wincept/controller/auth_controller.dart';
 import 'package:machine_test_wincept/controller/product_controller.dart';
 import 'package:machine_test_wincept/firebase_options.dart';
 import 'package:machine_test_wincept/utils/colors.dart';
-import 'package:machine_test_wincept/view/bottom_nav_bar.dart';
-import 'package:machine_test_wincept/view/splash_screen.dart';
+import 'package:machine_test_wincept/view/widgets/auth_checker.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => ProductController(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => AuthController(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
           useMaterial3: true,
         ),
-        home: const SplashScreen(),
+        home: const AuthChecker(),
       ),
     );
   }

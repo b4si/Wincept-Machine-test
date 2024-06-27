@@ -17,7 +17,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text("Orders"),
         leading: IconButton(
             onPressed: () {
